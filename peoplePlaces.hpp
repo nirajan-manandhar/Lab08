@@ -17,7 +17,7 @@ private:
 public:
     void readFile();
 
-    //PPrint out a sorted list of all the people. People with names starting
+    //Print out a sorted list of all the people. People with names starting
     //with A appear first, Z last.
     void printAll();
 

@@ -41,7 +41,7 @@ void peoplePlaces::printAll() {
 
 void peoplePlaces::visitedKT() {
     map<string, string>::iterator itr;
-    cout << "People who visited both the Krusty-Burger and the Tavern" << endl;
+    cout << "\nPeople who visited both the Krusty-Burger and the Tavern:\n" << endl;
     for (itr = peoplePlaceMap.begin(); itr != peoplePlaceMap.end(); ++itr) {
         string s = itr->second;
 
@@ -56,7 +56,7 @@ void peoplePlaces::visitedKT() {
 
 void peoplePlaces::notVisitedKH() {
     map<string,string>::iterator itr;
-    cout << "People who did not visit both the Krusty-Burger and Home" << endl;
+    cout << "\nPeople who did not visit both the Krusty-Burger and Home:\n" << endl;
     for (itr = peoplePlaceMap.begin(); itr != peoplePlaceMap.end(); ++itr) {
         string s = itr->second;
        // cout << s << endl;
@@ -75,7 +75,7 @@ void peoplePlaces::notVisitedKH() {
 
 void peoplePlaces::visitedKSnotT() {
     map<string, string>::iterator itr;
-    cout << "People who visited both the Krusty-Burger and School but did not visit the Tavern and Home" << endl;
+    cout << "\nPeople who visited both the Krusty-Burger and School but did not visit the Tavern and Home:\n" << endl;
     for (itr = peoplePlaceMap.begin(); itr != peoplePlaceMap.end(); ++itr) {
         string s = itr->second;
 
@@ -95,7 +95,7 @@ void peoplePlaces::visitedKSnotT() {
 void peoplePlaces::remove() {
     map<string, string>::iterator itr;
     map<string,string> newMap;
-    cout << "Removing people who have visited all the places from the list." << endl;
+    cout << "\nRemoving people who have visited all the places from the list:\n" << endl;
     for (itr = peoplePlaceMap.begin(); itr != peoplePlaceMap.end(); ++itr) {
         string s = itr->second;
 

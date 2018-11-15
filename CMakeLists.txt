@@ -3,4 +3,4 @@ project(Lab08)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Lab08 main.cpp)
+add_executable(Lab08 main.cpp peoplePlaces.cpp peoplePlaces.hpp)

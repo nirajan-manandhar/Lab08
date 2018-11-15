@@ -7,6 +7,7 @@ int main() {
     p.readFile();
     p.printAll();
     p.visitedKT();
+    p.notVisitedKH();
 
     std::cout << "Hello, World!" << std::endl;
 

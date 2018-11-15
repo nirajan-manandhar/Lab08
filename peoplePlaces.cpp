@@ -52,3 +52,56 @@ void peoplePlaces::visitedKT() {
         }
     }
 }
+
+void peoplePlaces::notVisitedKH() {
+    map<string, string>::iterator itr;
+    cout << "People who did not visit both the Krusty-Burger and Home" << endl;
+    for (itr = peoplePlaceMap.begin(); itr != peoplePlaceMap.end(); ++itr) {
+        string s = itr->second;
+
+        size_t foundK = s.find("Krusty-Burger");
+        size_t foundH = s.find("Home");
+
+        if (foundK == string::npos && foundH == string::npos) {
+            cout << itr->first << endl;
+        }
+    }
+}
+
+void peoplePlaces::visitedKSnotT() {
+    map<string, string>::iterator itr;
+    cout << "People who visited both the Krusty-Burger and School but did not visit the Tavern and Home" << endl;
+    for (itr = peoplePlaceMap.begin(); itr != peoplePlaceMap.end(); ++itr) {
+        string s = itr->second;
+
+        size_t foundK = s.find("Krusty-Burger");
+        size_t foundH = s.find("Home");
+        size_t foundS = s.find("School");
+        size_t foundT = s.find("Tavern");
+
+
+
+        if (foundK != string::npos && foundS != string::npos && foundT == string::npos && foundH == string::npos) {
+            cout << itr->first << endl;
+        }
+    }
+}
+
+void peoplePlaces::remove() {
+    map<string, string>::iterator itr;
+    cout << "Removing people who have visited all the places from the list." << endl;
+    for (itr = peoplePlaceMap.begin(); itr != peoplePlaceMap.end(); ++itr) {
+        string s = itr->second;
+
+        size_t foundK = s.find("Krusty-Burger");
+        size_t foundH = s.find("Home");
+        size_t foundS = s.find("School");
+        size_t foundT = s.find("Tavern");
+
+
+
+        if (foundK != string::npos && foundS != string::npos && foundT != string::npos && foundH != string::npos) {
+            //Remove the map values that match
+        }
+    }
+}

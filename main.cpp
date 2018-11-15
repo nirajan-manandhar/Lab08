@@ -8,7 +8,10 @@ int main() {
     p.printAll();
     p.visitedKT();
     p.notVisitedKH();
-
+    p.visitedKSnotT();
+    p.remove();
+    cout << "\nNew Map\n" << endl;
+    p.printAll();
     std::cout << "Hello, World!" << std::endl;
 
 

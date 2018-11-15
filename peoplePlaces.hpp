@@ -13,7 +13,7 @@ using namespace std;
 
 class peoplePlaces {
 private:
-    multimap<string, string> peoplePlaceMap;
+    map<string, string> peoplePlaceMap;
 public:
     void readFile();
 

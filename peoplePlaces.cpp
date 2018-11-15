@@ -14,14 +14,15 @@
 void peoplePlaces::readFile() {
     string line;
     string person;
-    string places;
-    string place1;
-    string place2;
-    string place3;
-    string place4;
+
     ifstream fin;
     fin.open("../peoplePlaces.txt");
     while(getline(fin, line)){
+        string places;
+        string place1;
+        string place2;
+        string place3;
+        string place4;
         istringstream iss(line);
         iss >> person >> place1 >> place2 >> place3 >> place4;
         places = place1 + " " + place2 + " " + place3 + " " + place4;
@@ -54,13 +55,17 @@ void peoplePlaces::visitedKT() {
 }
 
 void peoplePlaces::notVisitedKH() {
-    map<string, string>::iterator itr;
+    map<string,string>::iterator itr;
     cout << "People who did not visit both the Krusty-Burger and Home" << endl;
     for (itr = peoplePlaceMap.begin(); itr != peoplePlaceMap.end(); ++itr) {
         string s = itr->second;
-
+       // cout << s << endl;
+       // cout << "Name: " << itr->first << endl;
         size_t foundK = s.find("Krusty-Burger");
+        //cout << "found k" << foundK << endl;
         size_t foundH = s.find("Home");
+       // cout << "found h" << foundH << endl;
+
 
         if (foundK == string::npos && foundH == string::npos) {
             cout << itr->first << endl;
@@ -89,6 +94,7 @@ void peoplePlaces::visitedKSnotT() {
 
 void peoplePlaces::remove() {
     map<string, string>::iterator itr;
+    map<string,string> newMap;
     cout << "Removing people who have visited all the places from the list." << endl;
     for (itr = peoplePlaceMap.begin(); itr != peoplePlaceMap.end(); ++itr) {
         string s = itr->second;
@@ -98,10 +104,12 @@ void peoplePlaces::remove() {
         size_t foundS = s.find("School");
         size_t foundT = s.find("Tavern");
 
-
-
         if (foundK != string::npos && foundS != string::npos && foundT != string::npos && foundH != string::npos) {
-            //Remove the map values that match
+            cout << itr->first << endl;
+        } else {
+            newMap.insert(make_pair(itr->first, itr->second));
         }
     }
+
+    peoplePlaceMap = newMap;
 }
